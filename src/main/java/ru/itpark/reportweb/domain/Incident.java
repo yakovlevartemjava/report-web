@@ -9,6 +9,16 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 public class Incident {
     private int id;
-    private String name;
-    private String content;
+    private int clientId;
+    private String data;
+    private int startTimeHH;
+    private  int statTimeSS;
+    private  int finishTimeHH;
+    private  int finishTimeSS;
+    private  int duration;
+    private String description;
+    private String subject;
+    private  int transactions;
+    private String type;
+    private String component;
 }

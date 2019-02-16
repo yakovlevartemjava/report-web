@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <head data-th-replace="fragments/layout :: headFragment(title='All Clients')"></head>
+</head>
+<body>
+
+<div class="container">
+    <div class="row">
+        <div class="col s12">
+            <h1>Клиенты</h1>
+            <ul class="collection">
+                <li class="collection-item" data-th-each="client : ${clients}">
+                    <a data-th-href="@{/clients/{clientId}(clientId=${client.clientId}) }">
+                        <span data-th-text="${client.clientId}"></span>
+                        <span data-th-text="${client.clientName}"></span>
+                    </a>
+                </li>
+            </ul>
+            <a data-th-href="@{/clients/addclient}" class="waves-effect waves-light btn">Add Client</a>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

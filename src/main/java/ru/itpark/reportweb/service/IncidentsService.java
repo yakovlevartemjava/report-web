@@ -21,4 +21,12 @@ public class IncidentsService {
     public Incident findById(int id) {
         return incidentsRepository.findById(id);
     }
+
+    public void removeById(int id) {
+        incidentsRepository.removeById(id);
+    }
+
+    public void add(Incident incident) {
+        incidentsRepository.add(incident);
+    }
 }

@@ -1,27 +1,17 @@
 <!doctype html>
 <html lang="en">
-<head data-th-replace="fragments/layout :: headFragment(title='All Incidents')"></head>
+<head data-th-replace="fragments/layout :: headFragment(title=${client.clientName})"></head>
 <body>
 <div class="container">
-        <div class="row">
-            <div class="col s12">
-                <h1>Инциденты</h1>
-                <ul class="collection">
-                    <li class="collection-item" data-th-each="incident : ${incidents}">
-                        <a data-th-href="@{/incidents/{id} (id=${incident.id}) }">
-                            <span data-th-text="${incident.data}"></span>
-                        </a>
-                    </li>
-                </ul>
-                <a data-th-href="@{/incidents/add}" class="waves-effect waves-light btn">Add Incident</a>
-            </div>
-        </div>
-
-    <div>
-        <table class="centered">
-            <h1> Список всех инцидентов</h1>
+<div class="row">
+    <div class="col s12">
+        <h1 data-th-text="${client.clientName}"></h1>
+        <h1>Список всех инцидентов</h1>
+    </div>
+        <div>
+            <table class="centered">
                 <thead>
-                    <tr>
+                <tr>
                         <th>ID</th>
                         <th>Дата</th>
                         <th>Начало инцидента ЧЧ</th>
@@ -36,7 +26,7 @@
                         <th>Компонента</th>
                     </tr>
                 </thead>
-                <tbody  data-th-each="incident : ${incidents}">
+                <tbody  data-th-each="incident: ${incidents}">
                     <tr>
                         <td data-th-text="${incident.id}"></td>
                         <td data-th-text="${incident.data}"></td>
@@ -52,11 +42,10 @@
                         <td data-th-text="${incident.component}"></td>
                     </tr>
                 </tbody>
-        </table>
+            </table>
+        <div>
     </div>
 </div>
-
-<div data-th-include="fragments/layout :: scriptsFragment" data-th-remove="tag"></div>
-
+</div>
 </body>
 </html>
