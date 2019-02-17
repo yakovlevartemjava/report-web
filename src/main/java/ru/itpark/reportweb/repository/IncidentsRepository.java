@@ -17,43 +17,39 @@ public class IncidentsRepository {
 
     public List<Incident> findAll() {
         return jdbcTemplate.query(
-                "SELECT id, clientId, data, starttimehh, stattimess, finishtimehh, finishtimess, duration, description, subject, transactions, type, component FROM incidents",
+                "SELECT id, clientId, data, starttimehh, starttimemm, finishtimehh, finishtimemm, duration, description, subject, transactions FROM incidents ORDER BY id DESC",
                 (rs, i) -> new Incident(
                         rs.getInt("id"),
                         rs.getInt("clientId"),
                         rs.getString("data"),
                         rs.getInt("starttimehh"),
-                        rs.getInt("stattimess"),
+                        rs.getInt("starttimemm"),
                         rs.getInt("finishtimehh"),
-                        rs.getInt("finishtimess"),
+                        rs.getInt("finishtimemm"),
                         rs.getInt("duration"),
                         rs.getString("description"),
                         rs.getString("subject"),
-                        rs.getInt("transactions"),
-                        rs.getString("type"),
-                        rs.getString("component")
+                        rs.getInt("transactions")
                 )
         );
     }
 
     public Incident findById(int id) {
         return jdbcTemplate.queryForObject(
-                "SELECT id, clientId, data, starttimehh, stattimess, finishtimehh, finishtimess, duration, description, subject, transactions, type, component FROM incidents WHERE id = :id",
+                "SELECT id, clientId, data, starttimehh, starttimemm, finishtimehh, finishtimemm, duration, description, subject, transactions FROM incidents WHERE id = :id ORDER BY id DESC",
                 Map.of("id", id),
                 (rs, i) -> new Incident(
                         rs.getInt("id"),
                         rs.getInt("clientId"),
                         rs.getString("data"),
                         rs.getInt("starttimehh"),
-                        rs.getInt("stattimess"),
+                        rs.getInt("starttimemm"),
                         rs.getInt("finishtimehh"),
-                        rs.getInt("finishtimess"),
+                        rs.getInt("finishtimemm"),
                         rs.getInt("duration"),
                         rs.getString("description"),
                         rs.getString("subject"),
-                        rs.getInt("transactions"),
-                        rs.getString("type"),
-                        rs.getString("component")
+                        rs.getInt("transactions")
                 )
         );
     }
@@ -65,10 +61,23 @@ public class IncidentsRepository {
         );
     }
 
-    public void add(Incident incident) {
-        jdbcTemplate.update(
-                "INSERT INTO incidents (id,data) VALUES (:id, :data)",
-                Map.of("name", incident.getId(), "content", incident.getData())
+    public Incident findClient(int clientId) {
+        return jdbcTemplate.queryForObject(
+                "SELECT id, clientId, data, starttimehh, starttimemm, finishtimehh, finishtimemm, duration, description, subject, transactions FROM incidents WHERE clientId = :clientId",
+                Map.of("clientId", clientId),
+                (rs, i) -> new Incident(
+                        rs.getInt("id"),
+                        rs.getInt("clientId"),
+                        rs.getString("data"),
+                        rs.getInt("starttimehh"),
+                        rs.getInt("starttimemm"),
+                        rs.getInt("finishtimehh"),
+                        rs.getInt("finishtimemm"),
+                        rs.getInt("duration"),
+                        rs.getString("description"),
+                        rs.getString("subject"),
+                        rs.getInt("transactions")
+                )
         );
     }
 }

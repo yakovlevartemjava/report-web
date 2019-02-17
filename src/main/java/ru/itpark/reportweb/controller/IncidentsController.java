@@ -21,12 +21,6 @@ public class IncidentsController {
         return "incidents";
     }
 
-    @PostMapping("/add")
-    public String add(@ModelAttribute Incident incident) {
-        incidentsService.add(incident);
-        return "redirect:/incidents";
-    }
-
     @GetMapping ("/{id}")
     public String get(@PathVariable int id, Model model) {
         model.addAttribute("incident", incidentsService.findById(id));
@@ -37,5 +31,11 @@ public class IncidentsController {
     public String remove (@PathVariable int id) {
         incidentsService.removeById(id);
         return "redirect:/incidents";
+    }
+
+    @GetMapping ("/getClient")
+    public String getClient(@PathVariable int clientId, Model model) {
+        model.addAttribute("incidents", incidentsService.findClient(clientId));
+        return "incidents";
     }
 }

@@ -26,7 +26,7 @@ public class IncidentsService {
         incidentsRepository.removeById(id);
     }
 
-    public void add(Incident incident) {
-        incidentsRepository.add(incident);
+    public Incident findClient(int clientId) {
+        return incidentsRepository.findClient(clientId);
     }
 }

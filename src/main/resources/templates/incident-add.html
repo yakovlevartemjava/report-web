@@ -10,14 +10,14 @@
                 <form data-th-action="@{/incidents/add}" method="post">
                     <div class="row">
                         <div class="input-field col s12">
-                            <input placeholder="Incident Id" id="name" name="name" type="text" class="validate" required>
-                            <label for="name">Incident ID</label>
+                            <input placeholder="Incident Id" id="id" name="name" type="text" class="validate" required>
+                            <label for="id">Incident ID</label>
                         </div>
                     </div>
                     <div class="row">
                         <div class="input-field col s12">
-                            <textarea id="content" name="content" class="materialize-textarea" required></textarea>
-                            <label for="content">Incident Name</label>
+                            <textarea id="clientId" name="content" class="materialize-textarea" required></textarea>
+                            <label for="clientId">Incident Name</label>
                         </div>
                     </div>
                     <button class="waves-effect waves-lite btn" type="submit">Add</button>

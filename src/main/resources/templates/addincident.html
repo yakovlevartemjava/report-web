@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <head data-th-replace="fragments/layout :: headFragment(title='Add Incident')"></head>
+</head>
+<body>
+<div class="container">
+    <div class="row">
+        <div class="col s12">
+                <h1>Add Incident</h1>
+            <form data-th-action="@{/clients/addincidentpost}" method="post">
+                <div class="row">
+                    <div class="input-field col s12">
+                    <input placeholder="ClientId" id="clientId" name="ClientId" type="text" class="validate" required>
+                    <label for="clientId">Client ID</label>
+                </div>
+                <div class="input-field col s12">
+                    <input placeholder="data" id="data" name="data" type="text" class="validate" required>
+                    <label for="data">Data</label>
+                </div>
+                    <div class="input-field col s12">
+                        <input placeholder="starttimehh" id="starttimehh" name="startTimeHH" type="text" class="validate" required>
+                        <label for="starttimehh">Start Time HH</label>
+                    </div>
+                    <div class="input-field col s12">
+                        <input placeholder="starttimemm" id="starttimemm" name="startTimeMM" type="text" class="validate" required>
+                        <label for="starttimemm">Stat Time MM</label>
+                    </div>
+                    <div class="input-field col s12">
+                        <input placeholder="finishtimehh" id="finishtimehh" name="finishTimeHH" type="text" class="validate" required>
+                        <label for="finishtimehh">Finish Time HH</label>
+                    </div>
+                    <div class="input-field col s12">
+                        <input placeholder="finishtimemm" id="finishtimemm" name="finishTimeMM" type="text" class="validate" required>
+                        <label for="finishtimemm">Finish Time MM</label>
+                    </div>
+                    <div class="input-field col s12">
+                        <input placeholder="duration" id="duration" name="duration" type="text" class="validate" required>
+                        <label for="duration">Duration</label>
+                    </div>
+                    <div class="input-field col s12">
+                        <input placeholder="description" id="description" name="description" type="text" class="validate" required>
+                        <label for="description">Description</label>
+                    </div>
+                    <div class="input-field col s12">
+                        <input placeholder="subject" id="subject" name="subject" type="text" class="validate" required>
+                        <label for="subject">Subject</label>
+                    </div>
+                    <div class="input-field col s12">
+                        <input placeholder="transactions" id="transactions" name="transactions" type="text" class="validate" required>
+                        <label for="transactions">Transactions</label>
+                    </div>
+                </div>
+                <button class="waves-effect waves-lite btn" type="submit">Add Incident</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+<div data-th-include="fragments/layout :: scriptsFragment" data-th-remove="tag"></div>
+</body>
+</html>

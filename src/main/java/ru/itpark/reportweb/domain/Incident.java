@@ -12,13 +12,11 @@ public class Incident {
     private int clientId;
     private String data;
     private int startTimeHH;
-    private  int statTimeSS;
+    private  int startTimeMM;
     private  int finishTimeHH;
-    private  int finishTimeSS;
+    private  int finishTimeMM;
     private  int duration;
     private String description;
     private String subject;
     private  int transactions;
-    private String type;
-    private String component;
 }

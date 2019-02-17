@@ -2,18 +2,16 @@ DROP TABLE IF EXISTS incidents;
 
 CREATE TABLE IF NOT EXISTS incidents (
   id INTEGER PRIMARY KEY AUTO_INCREMENT,
-  clientId INTEGER,
+  clientId INT,
   data DATE,
-  startTimeHH INTEGER,
-  statTimeSS INTEGER,
-  finishTimeHH INTEGER,
-  finishTimeSS INTEGER,
-  duration INTEGER,
+  startTimeHH INT,
+  startTimeMM INT,
+  finishTimeHH INT,
+  finishTimeMM INT,
+  duration INT,
   description TEXT NOT NULL,
   subject TEXT NOT NULL,
-  transactions INTEGER,
-  type TEXT,
-  component TEXT
+  transactions INT,
   );
 
 DROP TABLE IF EXISTS clients;

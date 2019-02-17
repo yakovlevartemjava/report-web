@@ -31,8 +31,6 @@
                     <th>Описание</th>
                     <th>Причины</th>
                     <th>Потеряно операций</th>
-                    <th>Тип Инцидента</th>
-                    <th>Компонента</th>
                 </tr>
                 </thead>
                 <tbody>
@@ -40,15 +38,13 @@
                     <td data-th-text="${incident.id}"></td>
                     <td data-th-text="${incident.data}"></td>
                     <td data-th-text="${incident.startTimeHH}"></td>
-                    <td data-th-text="${incident.statTimeSS}"></td>
+                    <td data-th-text="${incident.startTimeMM}"></td>
                     <td data-th-text="${incident.finishTimeHH}"></td>
-                    <td data-th-text="${incident.finishTimeSS}"></td>
+                    <td data-th-text="${incident.finishTimeMM}"></td>
                     <td data-th-text="${incident.duration}"></td>
                     <td data-th-text="${incident.description}"></td>
                     <td data-th-text="${incident.subject}"></td>
                     <td data-th-text="${incident.transactions}"></td>
-                    <td data-th-text="${incident.type}"></td>
-                    <td data-th-text="${incident.component}"></td>
                 </tr>
                 </tbody>
             </table>
