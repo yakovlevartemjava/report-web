@@ -11,8 +11,8 @@
         <div class="row">
             <div class="col s12">
                 <table class="centered">
-                    <h1> Список всех инцидентов</h1>
-                    <thead>
+                    <h1 class="center-align  blue-grey-text darken-1 text-darken-1"> Список всех инцидентов</h1>
+                    <thead class="cyan lighten-4">
                     <tr>
                         <th>ID</th>
                         <th>Дата</th>
@@ -26,7 +26,7 @@
                         <th>Потеряно операций</th>
                     </tr>
                     </thead>
-                    <tbody  data-th-each="incident : ${incidents}">
+                    <tbody  data-th-each="incident : ${incidents}" class="orange lighten-5">
                     <tr>
                         <td data-th-text="${incident.id}"></td>
                         <td data-th-text="${incident.data}"></td>

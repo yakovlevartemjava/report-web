@@ -1,21 +1,36 @@
 <!doctype html>
 <html lang="en">
-<head data-th-replace="fragments/layout :: headFragment(title='client')"></head>
+<head data-th-replace="fragments/layout :: headFragment(title=${clientId})"></head>
 <body>
-<div>
-    <form data-th-action="@{/clients/{clientId}/remove (clientId=${clientId})}" method="post">
-        <button class="waves-effect waves-light btn" type="submit">Remove Client</button>
+
+<div class="right-align">
+    <form data-th-action="@{/clients/{clientId}/remove (clientId=${clientId})}" class="blue-text text-darken-2" method="post">
+        <button class="red accent-4" type="submit">Удалить клиента и все его инциденты</button>
     </form>
 </div>
+
+<div class="row">
+    <div class="col s2">
+        Удалить инцедент по ID:
+        <form data-th-action="@{/clients/{clientId}/removeincidentpost (clientId=${clientId})}" method="post">
+            <div class="input-field inline">
+                <span class="helper-text" data-error="wrong" data-success="right">Введите ID инцидента</span>
+                <input  type="number" id="id" name="id">
+                <button class="waves-effect waves-light blue-grey darken-1 btn-small">Удалить</button>
+            </div>
+        </form>
+    </div>
+</div>
+
 <div class="container">
 <div class="row">
     <div class="col s12">
-        <h3>Список инцидентов клиента</h3>
+        <h3 class="center-align  blue-grey-text darken-1 text-darken-1">Список инцидентов клиента</h3>
     </div>
 </div>
     <div>
         <table class="centered">
-            <thead>
+            <thead class="cyan lighten-4">
                 <tr>
                     <th>ID</th>
                     <th>Дата</th>
@@ -29,7 +44,7 @@
                     <th>Потеряно операций</th>
                 </tr>
             </thead>
-            <tbody  data-th-each="incident: ${incidents}">
+            <tbody  data-th-each="incident: ${incidents}" class="orange lighten-5">
                 <tr>
                     <td data-th-text="${incident.id}"></td>
                     <td data-th-text="${incident.data}"></td>
@@ -45,19 +60,10 @@
             </tbody>
         </table>
     </div>
-    <a data-th-href="@{/clients/{clientId}/addincident (clientId=${clientId})}" class="waves-effect waves-light btn">Add Incident</a>
-</div>
-<div>
-    <form data-th-action="@{/clients/{clientId}/removeincidentpost (clientId=${clientId})}" method="post">
-        <label>
-            <input name="id">
-        </label>
-        <label>
-            <textarea name="id"></textarea>
-        </label>
-        <button>Delete</button>
-    </form>
-</div>
+    <div class="center-align">
+        <a data-th-href="@{/clients/{clientId}/addincident (clientId=${clientId})}" class="waves-effect center-align blue-grey darken-1 waves-light btn">Добавить запись об инциденте</a>
+    </div>
 
+</div>
 </body>
 </html>

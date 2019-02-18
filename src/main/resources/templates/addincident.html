@@ -7,51 +7,51 @@
 <div class="container">
     <div class="row">
         <div class="col s12">
-                <h1>Add Incident</h1>
+                <h1 class="center-align blue-grey-text darken-1 text-darken-1">Заполните реквизиты инцидента</h1>
             <form data-th-action="@{/clients/addincidentpost}" method="post">
                 <div class="row">
                     <div class="input-field col s12">
-                    <input placeholder="ClientId" id="clientId" name="ClientId" type="text" class="validate" required>
-                    <label for="clientId">Client ID</label>
+                    <input placeholder="ClientId" id="clientId" name="ClientId" type="number" class="validate" required>
+                    <label for="clientId">ID Клиента</label>
                 </div>
                 <div class="input-field col s12">
                     <input placeholder="data" id="data" name="data" type="text" class="validate" required>
-                    <label for="data">Data</label>
+                    <label for="data">ГГГГ-ММ-ДД</label>
                 </div>
                     <div class="input-field col s12">
-                        <input placeholder="starttimehh" id="starttimehh" name="startTimeHH" type="text" class="validate" required>
-                        <label for="starttimehh">Start Time HH</label>
+                        <input placeholder="starttimehh" id="starttimehh" name="startTimeHH" type="number" class="validate" required>
+                        <label for="starttimehh">Начало инцидента ЧЧ</label>
                     </div>
                     <div class="input-field col s12">
-                        <input placeholder="starttimemm" id="starttimemm" name="startTimeMM" type="text" class="validate" required>
-                        <label for="starttimemm">Stat Time MM</label>
+                        <input placeholder="starttimemm" id="starttimemm" name="startTimeMM" type="number" class="validate" required>
+                        <label for="starttimemm">Начало инцидента ММ</label>
                     </div>
                     <div class="input-field col s12">
-                        <input placeholder="finishtimehh" id="finishtimehh" name="finishTimeHH" type="text" class="validate" required>
-                        <label for="finishtimehh">Finish Time HH</label>
+                        <input placeholder="finishtimehh" id="finishtimehh" name="finishTimeHH" type="number" class="validate" required>
+                        <label for="finishtimehh">Окончание инцидента ЧЧ</label>
                     </div>
                     <div class="input-field col s12">
-                        <input placeholder="finishtimemm" id="finishtimemm" name="finishTimeMM" type="text" class="validate" required>
-                        <label for="finishtimemm">Finish Time MM</label>
+                        <input placeholder="finishtimemm" id="finishtimemm" name="finishTimeMM" type="number" class="validate" required>
+                        <label for="finishtimemm">Окончание инцидента ММ</label>
                     </div>
                     <div class="input-field col s12">
                         <input placeholder="duration" id="duration" name="duration" type="text" class="validate" required>
-                        <label for="duration">Duration</label>
+                        <label for="duration">Продолжительность ММ</label>
                     </div>
                     <div class="input-field col s12">
                         <input placeholder="description" id="description" name="description" type="text" class="validate" required>
-                        <label for="description">Description</label>
+                        <label for="description">Описание инцидента</label>
                     </div>
                     <div class="input-field col s12">
                         <input placeholder="subject" id="subject" name="subject" type="text" class="validate" required>
-                        <label for="subject">Subject</label>
+                        <label for="subject">Причины инцидента</label>
                     </div>
                     <div class="input-field col s12">
                         <input placeholder="transactions" id="transactions" name="transactions" type="text" class="validate" required>
-                        <label for="transactions">Transactions</label>
+                        <label for="transactions">Количество потерянных операций (шт)</label>
                     </div>
                 </div>
-                <button class="waves-effect waves-lite btn" type="submit">Add Incident</button>
+                <button class="center-align blue-grey darken-1 waves-effect waves-light btn" type="submit">Добавить</button>
             </form>
         </div>
     </div>

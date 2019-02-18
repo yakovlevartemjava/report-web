@@ -29,11 +29,6 @@ public class ClientsController {
         return "client-add";
     }
 
-    @GetMapping("/allincidents")
-    public String goToIncidents() {
-        return "redirect:/incidents";
-    }
-
     @PostMapping("/addclient")
     public String add(@ModelAttribute Client client) {
         clientsService.addclient(client);
@@ -63,10 +58,9 @@ public class ClientsController {
         return "redirect:/clients";
     }
 
-    @PostMapping("//clients/{clientId}/removeincidentpost")
-    public String removeIncidentById(@PathVariable int id){
+    @PostMapping("/{clientId}/removeincidentpost")
+    public String removeIncidentById(@RequestParam("id") int id){
         clientsService.removeIncidentById(id);
-        return "clients";
+        return "redirect:/clients";
     }
-
 }

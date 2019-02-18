@@ -3,7 +3,6 @@ package ru.itpark.reportweb.controller;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
-import ru.itpark.reportweb.domain.Incident;
 import ru.itpark.reportweb.service.IncidentsService;
 
 @Controller
@@ -24,7 +23,7 @@ public class IncidentsController {
     @GetMapping ("/{id}")
     public String get(@PathVariable int id, Model model) {
         model.addAttribute("incident", incidentsService.findById(id));
-        return "incident";
+        return "incidents";
     }
 
     @PostMapping("/{id}/remove")

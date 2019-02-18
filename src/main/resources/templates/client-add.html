@@ -7,24 +7,29 @@
 <div class="container">
     <div class="row">
         <div class="col s12">
-            <div class="card">
-                <h1>Add Client</h1>
-                <form data-th-action="@{/clients/addclient}" method="post">
-                    <div class="row">
-                        <div class="input-field col s12">
-                            <input placeholder="Client Id" id="clientId" name="clientId" type="text" class="validate" required>
-                            <label for="clientId">Client ID</label>
+
+            <h1 class="center-align blue-grey-text darken-1 text-darken-1">Заполните реквизиты клиента</h1>
+
+                <div class="card">
+                    <form data-th-action="@{/clients/addclient}" method="post">
+                        <div class="row">
+                            <div class="input-field col s12">
+                                <input placeholder="Client ID" id="clientId" name="clientId" type="number" class="validate" required>
+                                <label for="clientId">Client ID</label>
+                            </div>
                         </div>
-                    </div>
-                    <div class="row">
-                        <div class="input-field col s12">
-                            <textarea id="clientName" name="clientName" class="materialize-textarea" required></textarea>
-                            <label for="clientName">Client Name</label>
+                        <div class="row">
+                            <div class="input-field col s12">
+                                <input placeholder="Наименование Клиента" id="clientName" name="clientName" type="text" class="validate" required>
+                                <label for="clientName">Client Name</label>
+                            </div>
                         </div>
+                        <button class="center-align blue-grey darken-1 waves-effect waves-light btn" type="submit">Добавить</button>
+                    </form>
+                    <div>
+
                     </div>
-                    <button class="waves-effect waves-lite btn" type="submit">Add Client</button>
-                </form>
-            </div>
+                </div>
         </div>
     </div>
 </div>
