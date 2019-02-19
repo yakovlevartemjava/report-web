@@ -26,11 +26,11 @@ public class IncidentsController {
         return "incidents";
     }
 
-    @PostMapping("/{id}/remove")
-    public String remove (@PathVariable int id) {
-        incidentsService.removeById(id);
-        return "redirect:/incidents";
-    }
+    //@PostMapping("/{id}/remove")
+    //public String remove (@PathVariable int id) {
+    //    incidentsService.removeById(id);
+    //    return "redirect:/incidents";
+    //}
 
     @GetMapping ("/getClient")
     public String getClient(@PathVariable int clientId, Model model) {
